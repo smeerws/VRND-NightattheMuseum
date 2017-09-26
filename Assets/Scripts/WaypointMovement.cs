@@ -4,6 +4,8 @@ using System.Collections;
 public class WaypointMovement : MonoBehaviour {
 	
 	public GameObject player;
+	public static bool mutePostersound;
+	public static bool humanoidrobot;
 
 
 	public float height = 2;
@@ -31,6 +33,19 @@ public class WaypointMovement : MonoBehaviour {
 					"easetype", "linear"
 				)
 			);
+			Debug.Log (waypoint.name);
+			if (waypoint.name == "Waypoint_w5" || waypoint.name == "Waypoint_w4") {
+				mutePostersound = true;
+			} else {
+				mutePostersound = false;
+			}
+			Debug.Log (mutePostersound);
+			if (waypoint.name == "Waypoint_w10") {
+				humanoidrobot = true;
+			} else {
+				humanoidrobot = false;
+			}
+			Debug.Log ("humanoidrobot: " + humanoidrobot);
 		} else {
 			player.transform.position = new Vector3 (waypoint.GetComponent<Transform> ().position.x, waypoint.GetComponent<Transform> ().position.y + height / 2, waypoint.GetComponent<Transform> ().position.z);
 		}
