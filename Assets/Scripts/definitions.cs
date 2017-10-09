@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class definitions : MonoBehaviour {
 	private GameObject robot;
-	private bool isdefactive;
+	private bool defActive, welcomeActive;
 	private GameObject btnVR, btnRobot, btnTele, btnAR, btnAI;
-	public  GameObject vrplane, robotplane, teleplane, arplane, aiplane;
+	public  GameObject vrplane, robotplane, teleplane, arplane, aiplane, welcomeplane;
 	private GameObject active;
 
 	// Use this for initialization
@@ -16,37 +16,41 @@ public class definitions : MonoBehaviour {
 		robot.GetComponent<Animation> ().enabled = false;
 
 		btnRobot = GameObject.Find ("btnRobot");
-		btnTele = GameObject.Find ("btnTele");
-		btnVR = GameObject.Find ("btnVR");
-		btnAR = GameObject.Find ("btnAR");
-		btnAI = GameObject.Find ("btnAI");
+		btnTele  = GameObject.Find ("btnTele");
+		btnVR    = GameObject.Find ("btnVR");
+		btnAR    = GameObject.Find ("btnAR");
+		btnAI    = GameObject.Find ("btnAI");
 
 		vrplane.SetActive(false);
 		robotplane.SetActive (false);
 		teleplane.SetActive (false);
 		arplane.SetActive (false);
 		aiplane.SetActive (false);
+		welcomeplane.SetActive (true);
 
-		isdefactive = false;
+		defActive = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (isdefactive) {
+		if (defActive) {
 			if (!active.GetComponent<AudioSource> ().isPlaying) {
 				active.gameObject.SetActive (false);
+				welcomeplane.SetActive (true);
 				robot.GetComponent<Animation> ().enabled = false;
 				setButtonsActive ();
-			}
-		}
-		
+				defActive = false;
+			} 
+		}	
 	}
 
 	private void startDefinition(GameObject current){
 		active = current;
 		active.gameObject.SetActive (true);
-		isdefactive = true;
+		welcomeplane.SetActive (false);
+		defActive = true;
+
 		robot.GetComponent<Animation> ().enabled = true;
 		setButtonsInactive ();
 	}

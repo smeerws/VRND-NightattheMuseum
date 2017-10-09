@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class videoPlayback : MonoBehaviour {
-	private string dronemovie = "drone-fade.mp4";
+	private string dronemovie     = "drone-fade.mp4";
 	private string robotworkmovie = "proftrainingrobot.mp4";
 	public int sceneNumber; 
 

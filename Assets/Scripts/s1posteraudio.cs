@@ -16,11 +16,11 @@ public class s1posteraudio : MonoBehaviour {
 
 	void Update(){
 		Debug.Log ("update poster" + WaypointMovement.mutePostersound);
-		if (WaypointMovement.mutePostersound && !isrunning) {
+		if (!WaypointMovement.mutePostersound && !isrunning) {
 			StartCoroutine (playNextSound ());
 			isrunning = true;
 		} 
-		if (!WaypointMovement.mutePostersound) {
+		if (WaypointMovement.mutePostersound) {
 			isrunning = false;
 			audio.Pause ();
 		}
