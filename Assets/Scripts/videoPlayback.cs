@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class videoPlayback : MonoBehaviour {
-	private string movie = "drone-fade.mp4";
+	private string dronemovie = "drone-fade.mp4";
+	private string robotworkmovie = "proftrainingrobot.mp4";
 	public int sceneNumber; 
 
 	// Use this for initialization
@@ -19,8 +20,18 @@ public class videoPlayback : MonoBehaviour {
 		//SceneManager.LoadScene (sceneNumber);
 	}
 
-	public void startVideo(){
-		StartCoroutine (streamVideo(movie));
+	public void startdroneVideo(){
+		StartCoroutine (streamVideo(dronemovie));
 		Debug.Log ("Coroutine started");
 	}
+
+	public void startrobotworkVideo(){
+		StartCoroutine (streamVideo(robotworkmovie));
+		Debug.Log ("Coroutine started");
+	}
+
+//	public void startdroneVideo(){
+//		StartCoroutine (streamVideo(dronemovie));
+//		Debug.Log ("Coroutine started");
+//	}
 }
