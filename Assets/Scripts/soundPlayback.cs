@@ -17,9 +17,9 @@ public class soundPlayback : MonoBehaviour {
 //		defs_audio, 
 		ai_audio = GameObject.Find("ai").GetComponent<AudioSource>(); 
 //		drone_audio, 
-//		tele_audio, 
-//		research_audio, 
-//		presence_audio, 
+		tele_audio = GameObject.Find("telepresence").GetComponent<AudioSource>(); 
+		research_audio = GameObject.Find("researchwall").GetComponent<AudioSource>(); 
+		presence_audio = GameObject.Find("improvepresence").GetComponent<AudioSource>();
 //		train_audio; 
 	}
 	
@@ -39,6 +39,9 @@ public class soundPlayback : MonoBehaviour {
 		} 
 
 		muteAIsound ();
+		muteTelesound ();
+		mutePresencesound ();
+		muteResearchsound ();
 	}
 
 	IEnumerator playNextSound(){
@@ -53,6 +56,24 @@ public class soundPlayback : MonoBehaviour {
 	private void muteAIsound(){
 		if (WaypointMovement.muteAIsound != ai_audio.mute) {
 			ai_audio.mute = WaypointMovement.muteAIsound;
+		}
+	}
+
+	private void muteTelesound(){
+		if (WaypointMovement.muteTelesound != tele_audio.mute) {
+			tele_audio.mute = WaypointMovement.muteTelesound;
+		}
+	}
+
+	private void mutePresencesound(){
+		if (WaypointMovement.mutePresencesound != presence_audio.mute) {
+			presence_audio.mute = WaypointMovement.mutePresencesound;
+		}
+	}
+
+	private void muteResearchsound(){
+		if (WaypointMovement.muteResearchsound != research_audio.mute) {
+			research_audio.mute = WaypointMovement.muteResearchsound;
 		}
 	}
 }
