@@ -37,4 +37,4 @@ After each test I improved the museum experience.
 ### Video:
 [![Video link P5 VRND nanodegree](http://img.youtube.com/vi/4S7aneXMAQU/0.jpg)](https://www.youtube.com/embed/4S7aneXMAQU)
 
-smeerws okt. 17
+smeerws okt. 17, additional information can be found at <a href="xrux.at#p5">xrux.at</a>
