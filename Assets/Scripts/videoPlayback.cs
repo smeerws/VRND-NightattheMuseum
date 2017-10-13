@@ -16,7 +16,7 @@ public class videoPlayback : MonoBehaviour {
 	private IEnumerator streamVideo(string video){
 		Handheld.PlayFullScreenMovie (video, Color.black, FullScreenMovieControlMode.CancelOnInput, FullScreenMovieScalingMode.AspectFill);
 		yield return new WaitForEndOfFrame ();
-		Debug.Log ("Video playback is now completed");
+		Debug.Log ("Video playback is now completed, can be tiggered only on mobile phone");
 		//SceneManager.LoadScene (sceneNumber);
 	}
 

@@ -31,6 +31,8 @@ I did a very simple and direct user testing.
 The user tried the app and talked about the experience while using it (Method: Think aloud). 
 After each test I improved the museum experience. 
 
+!! In unity the videos (Drone flight and Professionl training) can't be triggered in the unity editor. However, they if the app is running on the smartphone the videos are triggerable. !!
+
 ### Screenshots:
 ![P5 Screenshot 1](https://github.com/smeerws/VRND-NightattheMuseum/blob/master/Assets/Textures/floorplan-v2.png)
 
