@@ -41,9 +41,11 @@ public class definitions : MonoBehaviour {
 				robot.GetComponent<Animation> ().enabled = false;
 				setButtonsActive ();
 				defActive = false;
+				muteInactiveDefs ();
 			} 
 		}	
 	}
+		
 
 	private void startDefinition(GameObject current){
 		active = current;
@@ -74,6 +76,17 @@ public class definitions : MonoBehaviour {
 	public void startAI(){
 		startDefinition (aiplane);
 	}
+
+	private void muteInactiveDefs(){
+		vrplane.GetComponent<AudioSource> ().mute    = !vrplane.activeSelf;
+		arplane.GetComponent<AudioSource> ().mute    = !arplane.activeSelf;
+		robotplane.GetComponent<AudioSource> ().mute = !robotplane.activeSelf;
+		teleplane.GetComponent<AudioSource> ().mute  = !teleplane.activeSelf;
+		aiplane.GetComponent<AudioSource> ().mute    = !aiplane.activeSelf;
+
+	}
+
+
 
 	private void setButtonsInactive(){
 		btnRobot.GetComponent<Button> ().interactable = false;
